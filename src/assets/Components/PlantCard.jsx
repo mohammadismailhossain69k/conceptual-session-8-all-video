@@ -3,7 +3,6 @@ import { Link } from "react-router";
 
 const PlantCard = ({ plant }) => {
     const {image,price,category,id} =plant;
-  console.log(plant);
 
 
   return (

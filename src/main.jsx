@@ -7,6 +7,7 @@ import About from './Pages/About.jsx'
 import Home from './Pages/Home.jsx'
 import RootLayout from './Layouts/RootLayout.jsx'
 import PlantDetails from './Pages/PlantDetails.jsx'
+import axios from 'axios'
 
 const router = createBrowserRouter([
 {
@@ -33,8 +34,11 @@ const router = createBrowserRouter([
 },
 
 {
-  path:'/plant-details/:id', //uporer title amra akane : diye dynamic vabe id take bosabo 
+  path:'/plant-details/:id', //rul amra akane : diye dynamic vabe id take bosabo 
   Component: PlantDetails,
+  loader: ({params})=> // prams ar mardorme amader ke se id ta dive prams ta amader teke mokonto rakthe hobe and params tar name change kora jay na 
+
+    axios(`https://openapi.programming-hero.com/api/plant/${params.id}`)
 }
   ]
 },

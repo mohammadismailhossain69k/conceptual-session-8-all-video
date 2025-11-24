@@ -1,29 +1,27 @@
-import React, { useEffect, useState } from "react";
+import { useLoaderData } from "react-router";
 
 const PlantDetails = () => {
-    const [plant, setPlant] = useState({})
-    
-    useEffect(()=>{
-        fetch('https://openapi.programming-hero.com/api/plant/2')// amra id akane dynamic use korbo 
-        .then(res=> res.json())
-        .then(data=> console.log (data))
-    },[])
+    const {data} = useLoaderData()
+     const {name, description, category, price,image} = data.plants;//plant take amra Destructuring korbo
+
+
   return (
-    <div className="card bg-base-100 max-w-5xl mx-auto  shadow-sm">
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
-        />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">Card Title</h2>
-        <p>
-          A card component has a figure, a body part, and inside body there are
-          title and actions parts
-        </p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+    <div className="">
+      <div className="card max-w-5xl mx-auto bg-base-100  shadow-sm object-cover">
+        <figure className="h-[260px] overflow-hidden">
+          <img className="w-full h-full object-cover"
+            src={image}
+            alt="Shoes"
+          />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">{name}</h2>
+          <p>Category: {description}</p>
+          <p>Category: {category}</p>
+          <p>Price: ${price}</p>
+          <div className="card-actions justify-end">
+            <button className="btn bg-blue-700 text-white">Add to Cart</button> {/** amra akane id take dynamic vabe korsi  and uporer tilel take */}
+          </div>
         </div>
       </div>
     </div>
