@@ -7,7 +7,7 @@ const PlantCard = ({ plant }) => {
 
   return (
     <div className="">
-      <div className="card bg-base-100 w-96 shadow-sm object-cover">
+      <div className="card bg-base-100  shadow-sm object-cover">
         <figure className="h-[260px] overflow-hidden">
           <img className="w-full h-full object-cover"
             src={image}

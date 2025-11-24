@@ -1,6 +1,12 @@
-import { useLoaderData } from "react-router";
+import { useLoaderData, useLocation } from "react-router";
 
 const PlantDetails = () => {
+// amra akane dekbo useLocation ta 
+  const location = useLocation()
+  console.log (location)
+//finished useLocation
+
+
     const {data} = useLoaderData()
      const {name, description, category, price,image} = data.plants;//plant take amra Destructuring korbo
 

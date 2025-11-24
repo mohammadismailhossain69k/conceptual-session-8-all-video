@@ -8,11 +8,13 @@ import Home from './Pages/Home.jsx'
 import RootLayout from './Layouts/RootLayout.jsx'
 import PlantDetails from './Pages/PlantDetails.jsx'
 import axios from 'axios'
+import LoadingSpinner from './assets/Components/LoadingSpinner.jsx'
 
 const router = createBrowserRouter([
 {
   path: '/',
   Component: RootLayout,
+  hydrateFallbackElement: <LoadingSpinner/>,
   children:[
   {
   index: true,// ata true korle bydefult RootLayout panet ar Home sathe takbe
