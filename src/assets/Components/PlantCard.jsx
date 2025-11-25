@@ -19,7 +19,7 @@ const PlantCard = ({ plant }) => {
           <p>Category: {category}</p>
           <p>Price: ${price}</p>
           <div className="card-actions justify-end">
-            <Link to={`/plant-details/${id}`}  className="btn bg-blue-700 text-white">View Details</Link> {/** amra akane id take dynamic vabe korsi  and uporer tilel take */}
+            <Link state={plant} to={`/plant-details/${id}`}  className="btn bg-blue-700 text-white">View Details</Link> {/** amra akane id take dynamic vabe korsi  and uporer tilel take */}
           </div>
         </div>
       </div>
